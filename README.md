@@ -12,3 +12,5 @@ Organizations :
 - https://github.com/IOGS-LEnsE
 - https://github.com/IOGS-LEnsE-platforms
 - https://github.com/IOGS-LEnsE-ressources
+- https://github.com/IOGS-LEnsE-training
+- https://github.com/IOGS-LEnsE-embedded  (migration)
