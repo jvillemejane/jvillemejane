@@ -1,0 +1,17 @@
+;;NB;Python;Matlab;C++;;SQL;Objets;IA;Open Lib;;Modélisation;;Embarqué;
+d-autres-produits;Autres produits (Mesures, Analyses…);5;4;;;;;1;1;3;;3;;1;PC embarqué
+des-logiciels-d-and-x27-acquisition-de-donnees;Logiciels Acquisition Données;2;2;;;;2;2;;2;;1;;;
+des-logiciels-de-simulation;Logiciels Simulation;2;1;;1;;1;1;;;;2;;;
+des-logiciels-de-traitement-de-donnees;Logiciels Traitement de données;5;4;;1;;2;3;4;4;;;;;
+des-systemes-d-acquisition-de-donnees;Systèmes acquisition de données;6;4;2;;;3;2;3;5;;4;;2;FPGA
+des-systemes-temps-reel-de-traitement-de-donnees;Système temps réel;6;3;1;1;;4;5;3;4;;3;;2;FPGA, Micro
+;;26;18;3;3;;12;14;11;18;;13;;5;
+;;;;;;;;;;;;;;;
+;;NB;Objets;IA;Open Lib;;Embarqué;;;;;;;;
+d-autres-produits;Autres produits (Mesures, Analyses…);5;1;1;3;;1;PC embarqué;;;;;;;
+des-logiciels-d-and-x27-acquisition-de-donnees;Logiciels Acquisition Données;2;2;;2;;;;;;;;;;
+des-logiciels-de-simulation;Logiciels Simulation;2;1;;;;;;;;;;;;
+des-logiciels-de-traitement-de-donnees;Logiciels Traitement de données;5;3;4;4;;;;;;;;;;
+des-systemes-d-acquisition-de-donnees;Systèmes acquisition de données;6;2;3;5;;2;FPGA;;;;;;;
+des-systemes-temps-reel-de-traitement-de-donnees;Système temps réel;6;5;3;4;;2;FPGA, Micro;;;;;;;
+;;26;14;11;18;;5;;;;;;;;
