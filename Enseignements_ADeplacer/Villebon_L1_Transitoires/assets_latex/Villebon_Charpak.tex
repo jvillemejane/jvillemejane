@@ -83,6 +83,20 @@
 
 \usepackage[colorlinks=true, linkcolor=altncolor, anchorcolor=altncolor, citecolor=altncolor, filecolor=altncolor, menucolor=altncolor, urlcolor=altncolor]{hyperref} % Use the color defined above for all links
 
+\definecolor{darkblue}{rgb}{0.0, 0.2, 0.6}
+
+%----------------------------------------------------------------------------------------
+%	MISC.
+%----------------------------------------------------------------------------------------
+
+
+\usepackage{amsmath}
+\usepackage{circuitikz, verbatim}
+% http://math.et.info.free.fr/TikZ/bdd/TikZ-Impatient.pdf
+\usetikzlibrary{backgrounds}
+\ctikzset{}
+\usepackage{pgfplots}
+
 %----------------------------------------------------------------------------------------
 %	BOX STYLES
 %----------------------------------------------------------------------------------------
@@ -104,23 +118,6 @@
     frametitlerulewidth=0.5pt, % Title rule width
     frametitlefont=\Large\bfseries, % Title heading font specification
     font=\small
-}
-
-\mdfdefinestyle{intextbox}{
-    linecolor=black, % Outer line color
-    outerlinewidth=0.5pt, % Outer line width
-    roundcorner=10pt, % Amount of corner rounding
-    innertopmargin=7pt, % Top margin
-    innerbottommargin=7pt, % Bottom margin
-    innerrightmargin=7pt, % Right margin
-    innerleftmargin=7pt, % Left margin
-    backgroundcolor=white, % Box background color
-    frametitlealignment=\centering,
-    frametitlebackgroundcolor=gray!20, % Title background color
-    frametitlerule=false, % Title rule - true or false
-    frametitlerulecolor=white, % Title rule color
-    frametitlerulewidth=0.5pt, % Title rule width
-    frametitlefont=\Large\bfseries % Title heading font specification
 }
 
 \mdfdefinestyle{aavbox}{
@@ -150,4 +147,69 @@
 \vspace{#2} % White space below the heading
 }
 
-\newcommand{\BackToContents}{\hyperlink{contents}{{\small Back to Contents}}} % Define a command for linking back to the contents of the newsletter
+
+\usepackage{titlesec}
+
+%% SECTIONS
+\titleformat{\section} % command
+[display]
+{\bfseries\Large\color{darkblue}} % format
+{} % label
+{0.5ex} % sep
+{
+    \vspace{-5ex}
+    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \thesection. } % before-code
+[
+\vspace{-3ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+
+\titleformat{name=\section, numberless} % command
+[display]
+{\bfseries\Large\color{darkblue}} % format
+{} % label
+{0.5ex} % sep
+{
+    \vspace{-2ex}
+    \rule{\textwidth}{1pt}
+    \vspace{0.2ex}
+} % before-code
+[
+\vspace{-3ex}%
+\rule{\textwidth}{0.5pt}
+] % after-code
+
+%% SUBSECTION
+\titleformat{\subsection} % command
+{\bfseries\large\itshape\color{darkblue}} % format
+{} % label
+{0.1\textwidth} % sep
+{
+    \vspace{-0.4em}
+    \thesubsection. } % before-code
+[
+\vspace{-0.7em}
+\hspace{0.1\textwidth}
+\rule{0.9\textwidth}{0.3pt}
+] % after-code
+
+\titleformat*{\subsubsection}{\itshape\bfseries\color{darkblue}}
+
+
+%----------------------------------------------------------------------------------------
+%	THEOREMS
+%----------------------------------------------------------------------------------------
+
+\mdfdefinestyle{definitionstyle}{%
+linecolor=purple,linewidth=2,%
+frametitlerule=true,%
+frametitlebackgroundcolor=purple,
+frametitlefontcolor=white,
+frametitlefont=\large\bfseries,
+innertopmargin=0.5em,
+skipabove=1em,
+roundcorner=5pt,
+}
+
