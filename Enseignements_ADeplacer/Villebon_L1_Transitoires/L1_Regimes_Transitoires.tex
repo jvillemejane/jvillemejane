@@ -1,0 +1,381 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% L1 - Villebon Charpak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Régimes transitoires
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Created by:
+%	Julien VILLEMEJANE - 01/jun/2024
+% Modified by:
+%	
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Professional Newsletter Template
+% LaTeX Template
+% Version 1.0 (09/03/14)
+%
+% Created by:
+% Bob Kerstetter (https://www.tug.org/texshowcase/) and extensively modified by:
+% Vel (vel@latextemplates.com)
+% 
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt]{article} % The default font size is 10pt; 11pt and 12pt are alternatives
+
+\input{./_assets/latex/Villebon_Charpak.tex} % Include the document which specifies all packages and structural customizations for this template
+\usepackage{amsmath}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATIONS
+%----------------------------------------------------------------------------------------
+\def\module{Régimes Transitoires}
+\def\submodule{Régimes Transitoires}
+\def\moduleSmall{Rég. Tra.}
+\def\year{2023-2024}
+\def\problem{Etude d'un circuit RC}
+\def\problemName{Mettre en oeuvre un circuit RC et le modéliser}
+
+\def\validation{}
+
+\def\scheduleCM{1}
+\def\scheduleTD{0}
+\def\scheduleTP{2}
+
+\def\workingTeam{Par binôme}
+
+\def\workingSpecial{}
+
+\def\keywords{Etat stable; Régime transitoire; Constante de temps; Circuit RC}
+
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	HEADER IMAGE
+%----------------------------------------------------------------------------------------
+
+\begin{figure}[H]
+\centering\includegraphics[width=0.5\linewidth]{./_assets/latex/logo_ivc.png}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR - FIRST PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{.33\linewidth} % Mini page taking up 30% of the actual page
+\begin{mdframed}[style=sidebar,frametitle={\module}] % Sidebar box
+
+%-----------------------------------------------------------
+%	DOCUMENT DESCRIPTION
+\begin{center}
+
+\textit{\large \centering \year}
+\end{center}
+
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+\begin{center}
+	\textit{\large \moduleSmall}
+\end{center}
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+\begin{center}
+	\textbf{\problem} ( \validation )
+\end{center}
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+%-----------------------------------------------------------
+
+\textbf{Concepts étudiés}
+
+\begin{itemize}
+\item[\textsc{\scriptsize [Phys]}] Régime Transitoire
+\item[\textsc{\scriptsize [Math]}] Equation différentielle
+\item[\textsc{\scriptsize [Ing]}] Instrumentation et mesures
+\item[\textsc{\scriptsize [Ing]}] Réalisation d'un circuit
+\end{itemize}
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+%-----------------------------------------------------------
+
+\textbf{Mots clefs}
+
+\keywords
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+%-----------------------------------------------------------
+
+\textbf{Sessions}
+
+\begin{itemize}
+\item[\textbf{\scheduleCM}] Cours(s) - 1h30
+\item[\textbf{\scheduleTD}] TD(s) - 1h30
+\item[\textbf{\scheduleTP}] TP(s) - 3h00
+\end{itemize}
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+{\large Travail}
+
+\textbf{\workingTeam}
+
+\textbf{\workingSpecial}
+
+%-----------------------------------------------------------
+\end{mdframed}
+
+
+\begin{minipage}[t]{.95\linewidth}
+\textbf{Institut Villebon - Georges Charpak}\\
+\href{https://www.villebon-charpak.fr/}{https://www.villebon-charpak.fr/}
+
+
+\end{minipage}\hfill % End the sidebar mini page 
+% NO SPACE BETWEEN THE END OF SIDEBAR AND BEGIN OF MAIN PART
+%----------------------------------------------------------------------------------------
+%	MAIN BODY - FIRST PAGE
+%----------------------------------------------------------------------------------------
+%
+\begin{minipage}[t]{.65\linewidth} % Mini page taking up 65% of the actual page
+
+\hypertarget{context}{\heading{\huge \problemName}{6pt}} % \hypertarget provides a label to reference using \hyperlink{label}{link text}
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+%% Short introduction 
+La plupart du temps, la \textbf{transition entre deux états stables} n'est pas instantané. 
+
+La définition d'un régime transitoire en physique est la suivante :
+
+\begin{mdframed}[style=aavbox,frametitle={Régime transitoire}]
+\textbf{Régime d'évolution} d'un système qui n'a pas atteint un \textbf{état stable} (ou \textbf{régime permanent}).
+\end{mdframed}
+
+La durée caractéristique d'un régime transitoire est appelée \textbf{temps de relaxation} ou \textbf{constante de temps} de ce système.
+
+%%
+
+\bigskip
+
+%----------------------------------------------------------------------------------------
+%	IN-TEXT BOX / Intended learning outcomes
+%----------------------------------------------------------------------------------------
+
+\begin{mdframed}[style=aavbox,frametitle={Acquis d'Apprentissage Visés}]
+
+A la fin de ce module, vous serez capable de :
+
+\begin{enumerate}
+\item \textbf{Modéliser un phénomène transitoire} du premier ordre
+\item \textbf{Mettre en oeuvre un protocole de mesure} du temps de réponse d'un circuit RC
+\item \textbf{Rédiger un compte-rendu}
+\end{enumerate}
+\end{mdframed}
+
+%-----------------------------------------------------------
+
+\hypertarget{exemples}{\heading{Exemples}{6pt}} % \hypertarget provides a label to reference using \hyperlink{label}{link text}
+
+Il existe des régimes transitoires dans de nombreux domaines. Voici quelques exemples :
+
+\begin{itemize}
+	\item Mise en chauffe d'un four, d'une pièce...
+	\item Atteinte d'une vitesse d'avance (transports, moteurs...), d'une position (ascenceur, imprimante...)
+	\item Réactions chimiques (ions en solution acqueuse...)
+	\item Charge et décharge d'un condensateur à travers une résistance	
+\end{itemize}
+
+
+\medskip
+
+%-----------------------------------------------------------
+
+\hypertarget{etude}{\heading{Circuit RC}{6pt}} % \hypertarget provides a label to reference using \hyperlink{label}{link text}
+
+Dans le cadre de ce module, nous nous intéresserons à l'étude de la charge (et la décharge) d'un condensateur à travers une résistance (circuit suivant).
+
+CIRCUIT RC
+
+\medskip
+
+\end{minipage} % End the main body - first page mini page
+
+%----------------------------------------------------------------------------------------
+%	MAIN BODY - SECOND PAGE
+%----------------------------------------------------------------------------------------
+\newpage
+Dans la suite de ce module, nous allons nous intéressés au montage suivant :
+
+CIRCUIT RC
+
+\begin{circuitikz}
+	\draw (1,0) to [short, *-] (3,0)
+		to[R=$R_{2}$, -*, i<_=$I_2$] (3,2)
+		to[R=$R_{1}$, -] (3,4)
+		to [short, -*, i<_=$I$] (0,4);
+	\draw (3,0) to[short, -o] (4,0);
+	\draw[dashed] (4,0) to[short, -] (5.5,0) 
+		to[R=$R_L$, -] (5.5,2)
+		to[short, -] (4,2);
+	\draw (3,2) to[short, -o, i=$I_S$] (4,2);
+	
+	% fleche
+	\draw (0,0.5) edge[->] (0,3.5);
+	\node (Ein) at (-1,2.25){$V_E$};
+
+	\draw (0,0) to [short, *-] (1,0)
+		node[ground](GND){};
+	% fleche
+	\draw (3.5,0.3) edge[->, green!40!black] (3.5,1.7); \node[text=green!40!black] (US) at (4,1){$V_S$};
+\end{circuitikz}
+
+\centerline {\rule{.70\linewidth}{.5pt}} % Horizontal line
+
+%-----------------------------------------------------------
+
+\hypertarget{equations}{\heading{Mise en équation}{6pt}} % \hypertarget provides a label to reference using \hyperlink{label}{link text}
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+%-----------------------------------
+\textbf{Loi des mailles}
+
+Si on s'intéresse au circuit précédent, on s'aperçoit qu'il existe une seule maille principale. Il est alors possible d'utiliser la loi des mailles.
+
+
+\begin{mdframed}[style=aavbox,frametitle={Rappel de la loi des mailles (loi de Kirchhoff)}]
+
+Dans une maille quelconque d'un réseau, la somme algébrique des différences de potentiel le long de la maille est constamment nulle.
+
+Cette loi découle de l'additivité des différences de potentiel entre deux points. La différence de potentiels entre a et b, aussi appelée tension, est exprimée par l'équation suivante : $U_{ab} = V_a - V_b$
+\end{mdframed}
+
+Dans notre cas, on trouve :
+
+$$\boxed{E - u_R - u_C = 0}$$
+
+\medskip
+
+Comme il n'y a qu'une seule maille, il n'y a pas de noeuds dans ce circuit. Le courant qui traverse la résistance R est le même que le courant traversant le condensateur C.
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+%-----------------------------------
+\textbf{Capacité d'un condensateur}
+
+La \textbf{capacité} d'un condensateur représente la \textbf{quantité de charges électriques} qu'il accumule pour une différence de potentiel donnée.
+
+Elle est définie par : $$C = \frac{q}{u_C}$$ où $u_C$ est la différence de potentiel aux bornes du condensateur en volts (V), $q$ la quantité de charges électriques en coulombs (C) et $C$ la capacité en farads (F).
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+%-----------------------------------
+\textbf{Courant électrique et charges}
+
+Un \textbf{courant électrique} est un \textbf{mouvement de charges électriques} (généralement des électrons) au sein d'un matériau conducteur.
+
+L'\textbf{intensité d'un courant}, en ampères (A) décrit la quantité de charges électriques qui transitent à travers une surface donnée. On peut voir ce courant comme un \textbf{débit d'électrons}.
+
+On remonte à l'intensité par la loi suivante :
+
+$$i(t) = \frac{{\rm d}q(t)}{{\rm d}t}$$
+
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+%-----------------------------------
+\textbf{Lien entre C et $u_C$}
+
+Ainsi, il est possible de trouver le lien entre le courant qui traverse un condensateur et la valeur de sa capacité :
+
+$$q(t) = C \cdot u_C(t)$$
+
+$$i(t) = \frac{{\rm d}q(t)}{{\rm d}t} = \frac{{\rm d}(C \cdot u_C(t))}{{\rm d}t}$$
+
+On suppose que la capacité C est constante, ainsi :
+
+$$\boxed{i(t) = C \cdot \frac{{\rm d}u_C(t)}{{\rm d}t}}$$
+
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+%-----------------------------------
+\textbf{Loi d'Ohm}
+
+La loi d'Ohm aux bornes de la résistance R permet d'écrire : $$\boxed{u_R = R \cdot i(t)}$$
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+%-----------------------------------
+\textbf{Montage complet}
+
+En reprenant l'ensemble des équations précédentes, on obtient :
+
+$$E = R \cdot i(t) + u_C(t)$$
+
+$$\boxed{E = R \cdot C \cdot \frac{{\rm d}u_C(t)}{{\rm d}t} + u_C(t)}$$
+
+Il s'agit d'une équation différentielle du premier ordre.
+
+\medskip
+
+Il existe alors des outils mathématiques pour la résoudre, dans un cas particulier.
+
+Dans notre cas, on supposera qu'à l'instant $t=0$, la tension $u_C(t) = 0$ et qu'on ferme l'interrupteur K. Ainsi, la tension $u_E(t)$ passe instantanément de 0 à une tension positive $E$.
+
+On obtient alors la fonction suivante pour $u_C(t)$ (qui est également la tension de sortie de notre système) :
+
+$$\boxed{u_C(t) = E \cdot (1 - \exp{\frac{-t}{R \cdot C}}}$$
+
+Par la suite, on appelera $\tau = R \cdot C$ (\textit{tau}) la \textbf{constante de temps} du circuit.
+
+
+\centerline {\rule{.70\linewidth}{.5pt}} % Horizontal line
+
+\hypertarget{verification}{\heading{Vérification mathématique}{6pt}} % \hypertarget provides a label to reference using \hyperlink{label}{link text}
+
+On peut vérifier que la fonction obtenue précédemment répond bien à une solution de l'équation différentielle du circuit et que d'autres ne peuvent pas être solution de cette loi d'évolution du circuit.
+
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+%-----------------------------------
+\textbf{$u_C(t) = A$ (constante)}
+
+On a alors ${\rm d}u_C(t)/{\rm d}t = 0$
+
+Et : $R \cdot C \cdot \frac{{\rm d}u_C(t)}{{\rm d}t} + u_C(t) = A$
+
+Cela ne fonctionne que si $A = E$, c'est à dire si la capacité est déjà chargée.
+
+\textbf{$u_C(t) = B \cdot t + A$ (loi affine)}
+
+On a alors ${\rm d}u_C(t)/{\rm d}t = B$
+
+Et : $R \cdot C \cdot \frac{{\rm d}u_C(t)}{{\rm d}t} + u_C(t) = A + R \cdot C \cdot B$
+
+Cette relation donne une valeur différente de $E$.
+
+\textbf{$u_C(t) = E \cdot (1 - \exp{\frac{-t}{R \cdot C}}$ (exponentielle)}
+
+On a alors ${\rm d}u_C(t)/{\rm d}t = -E/(R \cdot C) \cdot \exp{\frac{-t}{R \cdot C}}$
+
+Et : $R \cdot C \cdot \frac{{\rm d}u_C(t)}{{\rm d}t} + u_C(t) = E \cdot (1 - \exp{\frac{-t}{R \cdot C}} - E/(R \cdot C) \cdot \exp{\frac{-t}{R \cdot C}}$
+
+On obtient alors : $R \cdot C \cdot \frac{{\rm d}u_C(t)}{{\rm d}t} + u_C(t) = E$
+
+\centerline {\rule{.70\linewidth}{.5pt}} % Horizontal line
+
+\hypertarget{realisation}{\heading{Mise en oeuvre}{6pt}} % \hypertarget provides a label to reference using \hyperlink{label}{link text}
+
+
+
+
+
+\centerline {\rule{.70\linewidth}{.25pt}} % Horizontal line
+
+
+\end{document} 
